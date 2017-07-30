@@ -1,0 +1,17 @@
+{
+  "name": "debitoor",
+  "version": "1.0.0",
+  "description": "Get them all - express middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "strafe",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cn007b/getthemall.git"
+  },
+}
