@@ -19,4 +19,7 @@ GET api/resources ? users=api/users & customer=api/customers/23 & countries=api/
 
 returns {users: [..], customer: {..}, countries: [..] } 
 
-That's it. enjoy
+### Caution
+Node.js v7.6 or later needed.
+
+Async function used for handling serial promises execution.
