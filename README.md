@@ -1,5 +1,8 @@
-# debitoor
+# debitoor 
 Technical task. Get them all - express middleware
+
+[![Build Status](https://travis-ci.org/strafe89/debitoor.svg?branch=master)](https://travis-ci.org/strafe89/debitoor)
+
 ### Description
 Make API handle that - build a reusable module/middleware for GETting multiple resources in one go. Should be easy to inject into any existing express app / api.
 ### Usage
