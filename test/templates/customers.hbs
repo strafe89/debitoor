@@ -1,0 +1,14 @@
+[
+    {{#repeat 15000}}
+    {
+      "cust_id": {{@index}},
+      "cust_name": "{{firstName}} {{lastName}}",
+      "cust_work": "{{company}}",
+      "cust_email": "{{email}}",
+      "cust_dob": "{{date '1900' '2000' 'YYYY'}}",
+      "cust_address": "{{int 1 100}} {{street}}",
+      "cust_city": "{{city}}",
+      "cust_optedin": {{boolean}}
+    }
+    {{/repeat}}
+]

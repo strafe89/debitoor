@@ -1,5 +1,14 @@
 const http = require('http');
 
+/**
+ * Get them all middleware
+ * @module getThemAll
+ * @function
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ * @return {Promise}
+ */
 function getThemAllMiddleware(req, res, next) {
     const resources = req.query;
     const urlParts = req.headers.host.split(':');
@@ -21,6 +30,14 @@ function getThemAllMiddleware(req, res, next) {
         res.end();
     });
 
+    /**
+     * Fetches given resource and writes payload to response
+     * @function
+     * @param {string} resourceName - Resource name
+     * @param {Object} index - Resource index in array
+     * @param {Array.<String>} arr - Resource names array
+     * @return {Promise}
+     */
     function pipeStream(resourceName, index, arr) {
         return new Promise((resolve, reject) => {
             const requestPath = resources[resourceName];
@@ -58,17 +75,35 @@ function getThemAllMiddleware(req, res, next) {
     }
 }
 
-async function asyncSerial(array, cb) {
+/**
+ * Runs promises one by one
+ * @function
+ * @param {Array} array - Any array
+ * @param {function} callback - Callback that returns promise
+ */
+async function asyncSerial(array, callback) {
     for (const item of array) {
         const index = array.indexOf(item);
-        await cb(item, index, array);
+        await callback(item, index, array);
     }
 }
 
+/**
+ * Check response for content type
+ * @function
+ * @param {Object} response - http response
+ * @return {boolean}
+ */
 function isJSON(response) {
     return response.headers['content-type'].indexOf('application/json') !== -1;
 }
 
+/**
+ * Check response for status code
+ * @function
+ * @param {Object} response - http response
+ * @return {boolean}
+ */
 function isStatusCodeValid(response) {
     return response.statusCode === 200;
 }

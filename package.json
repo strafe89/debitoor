@@ -1,10 +1,13 @@
 {
   "name": "getthemall-stream",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Get them all - express middleware",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "author": "strafe",
   "license": "ISC",
@@ -15,10 +18,13 @@
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
+    "dummy-json": "2.0.0",
     "eslint": "3.19.0",
     "eslint-config-react": "1.1.7",
     "eslint-plugin-import": "2.3.0",
     "eslint-plugin-react": "7.1.0",
-    "mocha": "3.4.2"
+    "express": "4.15.3",
+    "mocha": "3.4.2",
+    "supertest": "3.0.0"
   }
 }
