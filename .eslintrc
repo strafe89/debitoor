@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "react"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "sort-imports": "off",
+        "no-unused-vars": "warn",
+        "no-restricted-imports": "warn",
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ],
+        "indent": 0
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    }
+}

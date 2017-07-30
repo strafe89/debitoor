@@ -1,7 +1,6 @@
 const http = require('http');
-const stream = require('stream');
 
-function getThemAllMiddleware (req, res, next) {
+function getThemAllMiddleware(req, res, next) {
     const resources = req.query;
     const urlParts = req.headers.host.split(':');
     const options = {
@@ -30,7 +29,7 @@ function getThemAllMiddleware (req, res, next) {
 
             options.path = "/" + requestPath;
 
-            http.get(options, function (resourceResponse) {
+            http.get(options, function(resourceResponse) {
                 if (!isStatusCodeValid(resourceResponse)) {
                     res.write(`"Unexpected status code: ${resourceResponse.statusCode}"`);
                     return resolve();
